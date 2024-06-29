@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Results</title>
+  <style>
+    body {
+      background-image: url('https://img.freepik.com/free-photo/business-partners-handshake-global-corporate-with-technology-concept_53876-102615.jpg?w=2000'); /* Replace 'background-image.jpg' with your desired background image */
+      background-size: cover;
+      background-position: center;
+      color: red;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+    
+    h1 {
+      margin-top: 100px;
+    }
+    
+    form {
+      margin-top: 50px;
+    }
+    
+    input[type="text"] {
+      padding: 10px;
+      font-size: 16px;
+    }
+    
+    input[type="submit"] {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50; /* Replace with your desired button color */
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .blink {
+      animation: blink-animation 1s steps(5, start) infinite;
+      -webkit-animation: blink-animation 1s steps(5, start) infinite;
+      color: red;
+    }
+    
+    @keyframes blink-animation {
+      to {
+        visibility: hidden;
+      }
+    }
+    
+    @-webkit-keyframes blink-animation {
+      to {
+        visibility: hidden;
+      }
+    }
+    
+    .selected {
+      color: darkblue;
+      font-size: 36px;
+    }
+  </style>
+</head>
+<body>
+  <h1>NARESH TECHNOLOGIES & CONSULTANCY SERVICES</h1>
+   <h2>Enter your Name</h2>
+  
+  <form onsubmit="return false;">
+    <input type="text" id="nameInput" placeholder="Enter your name" required>
+    <br><br>
+    <input type="submit" value="Submit" onclick="showMessage()">
+  </form>
+
+  <div id="message"></div>
+
+  <script>
+    function showMessage() {
+      var name = document.getElementById('nameInput').value;
+      var messageElement = document.getElementById('message');
+      messageElement.innerHTML = "<h1><span class='blink'>Congratulations</span>, <span class='selected'>" + name + " Your selected</span>!</h1>";
+    }
+  </script>
+</body>
+</html>
